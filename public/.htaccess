@@ -19,3 +19,8 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 </IfModule>
+# Stop browser-viewing of all files starting with a period.
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
